@@ -2191,7 +2191,7 @@ class Mlb:
         params['stats'] = stats
         params['group'] = groups
 
-        mlb_data = self._mlb_adapter_v1.get(endpoint=f'people/{person_id}/stats', ep_params=params)
+        mlb_data = self._mlb_adapter_v1.get(endpoint=f'people/{person_id}?hydrate=stats', ep_params=params)
         if 400 <= mlb_data.status_code <= 499:
             return {}
 
